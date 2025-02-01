@@ -7,35 +7,55 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e9ecef; /* Light gray background */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column; /* Stack elements vertically */
         }
 
         .container {
             text-align: center;
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px; /* Increased padding */
+            border-radius: 10px; /* More rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+            width: 90%; /* Responsive width */
+            max-width: 600px; /* Max width for larger screens */
+        }
+
+        h1 {
+            color: #343a40; /* Darker text color for the heading */
+        }
+
+        #fact-display {
+            margin: 20px 0; /* Margin for spacing */
+            font-size: 18px; /* Larger font size for facts */
+            color: #495057; /* Darker gray for better readability */
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 25px; /* Increased padding */
+            font-size: 18px; /* Larger font size */
             margin-top: 20px;
             cursor: pointer;
             border: none;
             border-radius: 5px;
-            background-color: #007BFF;
+            background-color: #007BFF; /* Primary button color */
             color: white;
+            transition: background-color 0.3s; /* Smooth transition */
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        footer {
+            margin-top: 30px; /* Space above footer */
+            font-size: 14px; /* Smaller font size */
+            color: #6c757d; /* Gray color for footer text */
         }
     </style>
 </head>
@@ -45,6 +65,9 @@
         <div id="fact-display">Click the button to see a fun fact!</div>
         <button onclick="generateFact()">Generate Another Fun Fact</button>
     </div>
+    <footer>
+        <p>Done by Ponna Gunadeesh Reddy | <a href="mailto:gunadeeshg@gmail.com">gunadeeshg@gmail.com</a></p>
+    </footer>
     <script>
         const facts = [
             {
@@ -102,7 +125,7 @@
         function generateFact() {
             const randomIndex = Math.floor(Math.random() * facts.length);
             const fact = facts[randomIndex];
-            document.getElementById('fact-display').innerText = `${fact.title}: ${fact.description}`;
+            document.getElementById('fact-display').innerText = `${fact.title}: ${fact.description}`; // Fixed template literal syntax
         }
     </script>
 </body>
