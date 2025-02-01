@@ -8,13 +8,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #a8e0f9, #f8cdda); /* Gradient background from light blue to light pink */
+            background: linear-gradient(to right, #a8e0f9, #f8cdda); /* Gradient background */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             flex-direction: column; /* Stack elements vertically */
+        }
+
+        .sidebar {
+            background-color: #007BFF; /* Blue sidebar color */
+            width: 200px; /* Fixed width for sidebar */
+            height: 100vh; /* Full height */
+            position: absolute; /* Positioning */
+            left: 0; /* Align to the left */
+            top: 0; /* Align to the top */
+            color: white; /* Text color in sidebar */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Padding inside sidebar */
         }
 
         .container {
@@ -25,6 +40,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow */
             width: 90%; /* Responsive width */
             max-width: 600px; /* Max width for larger screens */
+            margin-left: 220px; /* Space for sidebar */
         }
 
         h1 {
@@ -35,6 +51,7 @@
             margin: 20px 0; /* Margin for spacing */
             font-size: 18px; /* Larger font size for facts */
             color: #495057; /* Darker gray for better readability */
+            transition: color 0.3s; /* Smooth transition for color change */
         }
 
         .icon {
@@ -72,6 +89,10 @@
     </style>
 </head>
 <body>
+    <div class="sidebar">
+        <h2>Music Facts</h2>
+        <p>Discover interesting facts about music!</p>
+    </div>
     <div class="container">
         <h1>Random Music Fact</h1>
         <div id="fact-display">
@@ -142,6 +163,11 @@
             const randomIndex = Math.floor(Math.random() * facts.length);
             const fact = facts[randomIndex];
             document.getElementById('fact-display').innerText = `${fact.title}: ${fact.description}`; // Fixed template literal syntax
+            
+            // Change the color of the fact display randomly
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#FFC300'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('fact-display').style.color = randomColor; // Change text color
         }
     </script>
 </body>
