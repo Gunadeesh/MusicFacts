@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Facts Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #e9ecef, #f8cdda); /* Gradient background */
+            background: linear-gradient(to right, #a8e0f9, #f8cdda); /* Gradient background from light blue to light pink */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,6 +35,12 @@
             margin: 20px 0; /* Margin for spacing */
             font-size: 18px; /* Larger font size for facts */
             color: #495057; /* Darker gray for better readability */
+        }
+
+        .icon {
+            color: #007BFF; /* Blue color for icons */
+            font-size: 24px; /* Icon size */
+            margin: 0 5px; /* Margin between icons */
         }
 
         button {
@@ -67,7 +74,11 @@
 <body>
     <div class="container">
         <h1>Random Music Fact</h1>
-        <div id="fact-display">Click the button to see a fun fact!</div>
+        <div id="fact-display">
+            <i class="fas fa-music icon"></i> <!-- Music icon -->
+            Click the button to see a fun fact!
+            <i class="fas fa-music icon"></i> <!-- Music icon -->
+        </div>
         <button onclick="generateFact()">Generate Another Fun Fact</button>
     </div>
     <footer>
